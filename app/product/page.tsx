@@ -1,7 +1,7 @@
 "use client";
 import { Wrench, Search } from "lucide-react";
 import { useState } from "react";
-
+ import { FiMenu, FiX } from 'react-icons/fi';
 export default function SparePartsPage() {
   const [searchQuery, setSearchQuery] = useState("");
 

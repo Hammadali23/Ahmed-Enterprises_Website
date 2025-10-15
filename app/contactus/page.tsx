@@ -2,7 +2,7 @@
 
 import { MapPin, Phone, Printer, Send } from "lucide-react";
 import { useState } from "react";
-
+ import { FiMenu, FiX } from 'react-icons/fi';
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
