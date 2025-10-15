@@ -2,8 +2,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
- import { FiMenu, FiX } from 'react-icons/fi';
+import { Menu, X, Phone, Mail } from "lucide-react";
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [active, setActive] = useState("Home");
@@ -16,7 +16,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-gray-200 text-red-800 py-4 shadow-md ">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-gray-300 text-red-600 py-2 shadow-md">
       <div className="container mx-auto flex items-center justify-between px-4">
         {/* Logo */}
         <div className="flex items-center">
@@ -30,21 +30,46 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              onClick={() => setActive(link.name)}
-              className={`transition-transform duration-200 hover:scale-110 ${
-                active === link.name
-                  ? "scale-110 font-semibold text-red-500"
-                  : ""
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
+        <div className="hidden md:flex flex-col items-end">
+          <div className="flex space-x-8 mb-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setActive(link.name)}
+                className={`transition-transform duration-200 hover:scale-110 ${
+                  active === link.name
+                    ? "scale-110 font-semibold text-red-500"
+                    : ""
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Contact Info - One Line with Icons */}
+          <div className="flex items-center space-x-3 text-sm text-gray-700 mt-2">
+            <div className="flex items-center space-x-1">
+              <Phone size={16} className="text-blue-700" />
+              <a
+                href="tel:+922134321552"
+                className="hover:underline text-blue-700"
+              >
+                +92 21 34321552
+              </a>
+            </div>
+            <span className="text-gray-500">|</span>
+            <div className="flex items-center space-x-1">
+              <Mail size={16} className="text-blue-700" />
+              <a
+                href="mailto:info@ahmad-ent.com"
+                className="hover:underline text-blue-700"
+              >
+                info@ahmad-ent.com
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
@@ -76,6 +101,28 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
+
+          {/* Mobile Contact Info */}
+          <div className="flex flex-col items-center text-gray-700 text-sm mt-3 space-y-1">
+            <div className="flex items-center space-x-1">
+              <Phone size={16} className="text-blue-700" />
+              <a
+                href="tel:+922134321552"
+                className="hover:underline text-blue-700"
+              >
+                +92 21 34321552
+              </a>
+            </div>
+            <div className="flex items-center space-x-1">
+              <Mail size={16} className="text-blue-700" />
+              <a
+                href="mailto:info@ahmad-ent.com"
+                className="hover:underline text-blue-700"
+              >
+                info@ahmad-ent.com
+              </a>
+            </div>
+          </div>
         </div>
       )}
     </nav>

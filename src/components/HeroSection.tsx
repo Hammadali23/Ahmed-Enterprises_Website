@@ -9,32 +9,33 @@ export default function HomePage() {
 
   
   const sliderImages = [
-    "/sss.jpg",
-    "/danfoss.jpeg",
-    "/services.jpeg",
-    "/expert.jpg"
+    "/slide1.jpg",
+    "/slide2.jpeg",
+    "/slide3.jpg",
+    "/slide4.png",
+    "/slide5.jpg"
   ];
 
   
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
-    }, 5000);
+    }, 2000);
     return () => clearInterval(interval);
   }, [sliderImages.length]);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
+    setCurrentSlide((prev) => (prev + 3) % sliderImages.length);
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + sliderImages.length) % sliderImages.length);
+    setCurrentSlide((prev) => (prev - 3 + sliderImages.length) % sliderImages.length);
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen bg-gray-50 mt-24">
       {/* Hero Section with Image Slider */}
-      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden bg-red-900">
+      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-red-900">
         
         {/* Slider Images Container */}
         <div className="absolute inset-0">
@@ -58,7 +59,7 @@ export default function HomePage() {
           ))}
           
           
-          <div className="absolute inset-0 bg-red-900 bg-opacity-60" style={{ zIndex: 2 }}></div>
+          <div className="absolute inset-0 b bg-opacity-60" style={{ zIndex: 2 }}></div>
         </div>
 
         {/* Previous Button */}
@@ -98,8 +99,8 @@ export default function HomePage() {
 
         {/* Hero Content */}
         <div className="relative z-20 text-center text-white px-6">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
-            Welcome to Ahmed Enterprises
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-red-700 via-red-600 to-red-800 bg-clip-text text-transparent font-serif ">
+            Welcome To Ahmed Enterprises
           </h1>
           <p className="text-base md:text-xl max-w-2xl mx-auto mb-6 leading-relaxed drop-shadow-md">
             Your trusted partner for HVAC & Refrigeration solutions — combining
@@ -187,7 +188,7 @@ export default function HomePage() {
       </section>
 
       {/* Call To Action */}
-      <section className="py-16 bg-red-800 text-white text-center px-6">
+      <section className="py-16 bg-red-600 text-white text-center px-6">
         <h2 className="text-3xl font-bold mb-4">
           Ready to Work with Ahmed Enterprises?
         </h2>

@@ -56,79 +56,66 @@ export default function SparePartsPage() {
     {
       name: "Transducer 00PPG000012000A",
       desc: "A precision device that converts physical signals such as pressure, temperature, or force into electrical signals for monitoring or control applications.",
-      price: "Rs 45,000",
       img: "/transducer12000.png",
     },
     {
       name: "York Referigeration Compressor Oil",
       desc: "A high-quality mineral-based lubricant specially formulated for York refrigeration and air conditioning compressors. It provides excellent lubrication, moisture control, and chemical stability, ensuring reliable compressor performance and extended service life. Suitable for systems using refrigerants like R-22 and R-134a.",
-      price: "Rs 22,000",
       img: "/compressoroil.jpg",
     },
     {
       name: "Ester Oil SW220 (5 Liter Can)",
       desc: "High-performance synthetic compressor oil designed for excellent lubrication, thermal stability, and long service life in HVAC and industrial systems.",
-      price: "Rs 60,000",
       img: "/esteroilsw220.png",
     },
     {
       name: "Suniso Oil Sl-68",
       desc: "Fully synthetic (POE) refrigeration compressor oil designed for HFC / chlorine-free refrigerants, offering excellent miscibility, viscosity stability, thermal stability, and wear protection in refrigeration and AC systems.",
-      price: "Rs 60,000",
       img: "/sunisooilsl68.jpg",
     },
     {
       name: "Honeywell WS9B2WB/U",
       desc: "The WS9B2WB/U is a wall-mounted temperature control / thermostat module intended for use with fan coil units (2-pipe systems).",
-      price: "Rs 60,000",
       img: "/honeywellws.jpg",
     },
     {
       name: "Carrier POE68 Centrifugal Oil",
       desc: "High-performance POE68 centrifugal oil designed for superior lubrication and cooling in HVAC and refrigeration compressors.",
-      price: "Rs 60,000",
       img: "/poe68.png",
     },
     {
       name: "Honeywell FCU Valve V4043C1362B",
       desc: "A two-way, 2-position motorized valve designed for fan coil unit (FCU) applications, featuring a spring-return mechanism to close the valve upon loss of power.",
-      price: "Rs 60,000",
       img: "/FCUvalve.jpg",
     },
      {
       name: "Carrier Internal Oil Filter Kit 06NA660028",
       desc: "A genuine OEM internal oil filter kit designed for Carrier 30HXC / 30GX 06N screw chillers",
-      price: "Rs 60,000",
       img: "/oilfilter06na.jpg",
     },
     {
       name: "Toshiba Remote Controller 43166011 (RBC-AMT32E, Wired)",
       desc: "A wired remote controller used with Toshiba VRF / light commercial air-conditioning systems",
-      price: "Rs 60,000",
       img: "/toshibaremotecontrol.jpg",
     },
     {
       name: "06NA660011 - Carrier HVAC - Unloader Solenoid Valve",
       desc: "OEM unloader solenoid valve for Carrier 06NA screw compressors, controlling compressor capacity and enhancing efficiency.",
-      price: "Rs 60,000",
       img: "/solenoidvalve06na.jpg",
     },
     {
       name: "CARRIER, Mfr Part # HN53CC024, Contactor - 115Z68|HN53CC024 - Grainger",
       desc: "A Carrier HN53CC024 is a 3-pole HVAC contactor with a 24 VAC coil rated for about 30 A full-load, used for switching and controlling high-current loads in air conditioning / refrigeration systems",
-      price: "Rs 60,000",
       img: "/contactorcc024.jpeg",
     },
     {
       name: "Hisense HYE-VD01 Wireless Remote Controller",
       desc: "A slim, backlit LCD wireless controller for Hisense VRF systems, offering individual louver control, 24-hour timer, auto test run, self-diagnostic functions, and multiple operating modes (cool/heat/auto/fan/dry).",
-      price: "Rs 60,000",
       img: "/hye-vd01.jpg",
     },
     {
       name: "ALS-3 Oil strainer KH11NG120",
       desc: "Element 26 026-11225-000 is a high-quality oil filter element (20-micron) designed for commercial chiller units. It ensures efficient filtration and smooth oil circulation during oil changes, protecting the compressor from contaminants..",
-      price: "Rs 60,000",
       img: "/oilfilter120.jpg",
     },
   ];
@@ -143,7 +130,7 @@ export default function SparePartsPage() {
     <div className="min-h-screen bg-gray-50 text-gray-800 ">
       <main className="pt-42"></main>
       {/* Header Section */}
-      <section className="text-center py-16 bg-red-900 text-white">
+      <section className="text-center py-16 bg-red-600 text-white">
         <h1 className="text-4xl font-bold mb-3">Spare Parts & Services</h1>
         <p className="text-lg max-w-2xl mx-auto px-3 py-3">
           We provide original spare parts for all leading HVAC brands along with
@@ -241,7 +228,6 @@ export default function SparePartsPage() {
                 <div className="p-5">
                   <h3 className="font-semibold text-xl mb-2">{product.name}</h3>
                   <p className="text-gray-600 text-sm mb-3">{product.desc}</p>
-                  <p className="text-blue-600 font-bold">{product.price}</p>
                 </div>
               </div>
             ))}

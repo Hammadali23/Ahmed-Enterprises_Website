@@ -1,6 +1,6 @@
 "use client";
 
-import { MapPin, Phone, Printer, Send } from "lucide-react";
+import { MapPin, Phone, Printer, Mail, Send } from "lucide-react";
 import { useState } from "react";
  import { FiMenu, FiX } from 'react-icons/fi';
 export default function ContactPage() {
@@ -65,19 +65,33 @@ export default function ContactPage() {
                   <p>Manga Mandi Bypass, Multan Road, Lahore.</p>
                 </div>
               </div>
-
+              {/* Workshop */}
+              <div>
+                <h3 className="font-semibold text-gray-900">Email address:</h3>
+                <div className="flex items-start gap-3 mt-1">
+                 <Mail className="w-5 h-5 mt-1 text-blue-500" />
+                  <p>
+                     <a
+                     href="mailto:info@ahmad-ent.com"
+                     className="text-blue-700 hover:underline"
+                       >
+                        info@ahmad-ent.com
+                     </a>
+                     </p>
+                </div>
+                     </div>
               {/* Contact Numbers */}
               <div className="pt-3">
                 <div className="flex items-center gap-3 mb-2">
                   <Phone className="w-5 h-5 text-green-500" />
                   <p>
-                    <strong>Tel:</strong> 021-32351552-53
+                    <strong>Tel:</strong> 021-34321552-53
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
                   <Printer className="w-5 h-5 text-gray-500" />
                   <p>
-                    <strong>Fax:</strong> 021-32351552
+                    <strong>Fax:</strong> 021-34321552
                   </p>
                 </div>
               </div>
