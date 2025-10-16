@@ -7,16 +7,14 @@ import { useState, useEffect } from "react";
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  
   const sliderImages = [
     "/slide1.jpg",
     "/slide2.jpeg",
-    "/slide3.jpg",
+    "/sss.jpg",
     "/slide4.png",
-    "/slide5.jpg"
+    "/slide5.jpg",
   ];
 
-  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
@@ -29,14 +27,15 @@ export default function HomePage() {
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 3 + sliderImages.length) % sliderImages.length);
+    setCurrentSlide(
+      (prev) => (prev - 3 + sliderImages.length) % sliderImages.length
+    );
   };
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50 mt-24">
       {/* Hero Section with Image Slider */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-red-900">
-        
         {/* Slider Images Container */}
         <div className="absolute inset-0">
           {sliderImages.map((image, index) => (
@@ -45,21 +44,23 @@ export default function HomePage() {
               className="absolute inset-0 transition-opacity duration-1000"
               style={{
                 opacity: index === currentSlide ? 1 : 0,
-                zIndex: 1
+                zIndex: 1,
               }}
             >
               <Image
                 src={image}
                 alt={`Slide ${index + 1}`}
                 fill
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: "cover" }}
                 priority={index === 0}
               />
             </div>
           ))}
-          
-          
-          <div className="absolute inset-0 b bg-opacity-60" style={{ zIndex: 2 }}></div>
+
+          <div
+            className="absolute inset-0 b bg-opacity-60"
+            style={{ zIndex: 2 }}
+          ></div>
         </div>
 
         {/* Previous Button */}
@@ -67,8 +68,18 @@ export default function HomePage() {
           onClick={prevSlide}
           className="absolute left-6 z-30 hover:bg-opacity-40 text-white p-4 rounded-full transition-all duration-300"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" />
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={3}
+              d="M15 19l-7-7 7-7"
+            />
           </svg>
         </button>
 
@@ -77,8 +88,18 @@ export default function HomePage() {
           onClick={nextSlide}
           className="absolute right-6 z-30  hover:bg-opacity-40 text-white p-4 rounded-full transition-all duration-300"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={3}
+              d="M9 5l7 7-7 7"
+            />
           </svg>
         </button>
 
@@ -99,10 +120,10 @@ export default function HomePage() {
 
         {/* Hero Content */}
         <div className="relative z-20 text-center text-white px-6">
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-red-700 via-red-600 to-red-800 bg-clip-text text-transparent font-serif ">
-            Welcome To Ahmed Enterprises
+          <h1 className="md:text-5xl text-4xl font-bold font-serif ">
+            WELCOME TO AHMED ENTERPRISES
           </h1>
-          <p className="text-base md:text-xl max-w-2xl mx-auto mb-6 leading-relaxed drop-shadow-md">
+          <p className="text-base md:text-2xl max-w-2xl mx-auto mb-6 leading-relaxed drop-shadow-md">
             Your trusted partner for HVAC & Refrigeration solutions — combining
             innovation, expertise, and reliability for over 20 years across
             Pakistan.
@@ -120,11 +141,12 @@ export default function HomePage() {
       <section className="py-16 px-6 md:px-20 bg-white text-center">
         <h2 className="text-3xl font-bold text-red-800 mb-4">Who We Are</h2>
         <p className="text-gray-600 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
-          With a legacy of excellence, <span className="font-semibold">Ahmed Enterprises</span> stands as a leading HVAC&R
-          service provider in Pakistan. We offer installation, maintenance, and
-          spare parts under one roof. With offices in Karachi and Lahore, our
-          dedicated engineers and technicians ensure quality, reliability, and
-          satisfaction every step of the way.
+          With a legacy of excellence,{" "}
+          <span className="font-semibold">Ahmed Enterprises</span> stands as a
+          leading HVAC&R service provider in Pakistan. We offer installation,
+          maintenance, and spare parts under one roof. With offices in Karachi
+          and Lahore, our dedicated engineers and technicians ensure quality,
+          reliability, and satisfaction every step of the way.
         </p>
       </section>
 

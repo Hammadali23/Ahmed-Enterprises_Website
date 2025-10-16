@@ -1,7 +1,7 @@
 "use client";
 import { Wrench, Search } from "lucide-react";
 import { useState } from "react";
- import { FiMenu, FiX } from 'react-icons/fi';
+import { FiMenu, FiX } from "react-icons/fi";
 export default function SparePartsPage() {
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -9,34 +9,49 @@ export default function SparePartsPage() {
     {
       name: "Hisense VRF",
       img: "/hisense.png",
-      link: "https://www.hisensehvac.com/",
     },
     {
       name: "Carrier",
       img: "/carrierlogo.png",
-      link: "https://www.carrier.com/",
     },
     {
       name: "York",
       img: "/yorklogo.png",
-      link: "https://www.johnsoncontrols.com/york",
     },
     {
       name: "Danfoss",
       img: "/danfoss.jpeg",
-      link: "https://www.danfoss.com/",
     },
     {
       name: "HoneyWell",
       img: "/Honeywelllogo.png",
-      link: "https://www.honeywell.com/",
+    },
+     {
+      name: "Carlyle",
+      img: "/carlylelogo.png",
+    },
+    {
+      name: "Trane",
+      img: "/tranelogo.png",
+    },
+     {
+      name: "Johnson Controls",
+      img: "/johnsonlogo.jpg",
+    },
+     {
+      name: "Daikin",
+      img: "/Daikinlogo.png",
+    },
+     {
+      name: "Totaline",
+      img: "/Totalinelogo.png",
     },
   ];
 
   const services = [
     {
       name: "HVAC System Installation",
-      img: "/hvac.jpg",
+      img: "/systeminstallation.png",
     },
     {
       name: "Air Conditioner Repair",
@@ -88,7 +103,7 @@ export default function SparePartsPage() {
       desc: "A two-way, 2-position motorized valve designed for fan coil unit (FCU) applications, featuring a spring-return mechanism to close the valve upon loss of power.",
       img: "/FCUvalve.jpg",
     },
-     {
+    {
       name: "Carrier Internal Oil Filter Kit 06NA660028",
       desc: "A genuine OEM internal oil filter kit designed for Carrier 30HXC / 30GX 06N screw chillers",
       img: "/oilfilter06na.jpg",
@@ -116,14 +131,45 @@ export default function SparePartsPage() {
     {
       name: "ALS-3 Oil strainer KH11NG120",
       desc: "Element 26 026-11225-000 is a high-quality oil filter element (20-micron) designed for commercial chiller units. It ensures efficient filtration and smooth oil circulation during oil changes, protecting the compressor from contaminants..",
-      img: "/oilfilter120.jpg",
+      img: "/ALS-3-KH11NG120.jpg",
+    },
+     {
+      name: "Compressor Lockout Relay Board Part# HN-65CT-003",
+      desc: "The Compressor Lockout Relay Board Part# HN-65CT-003 controls and protects compressor operation by preventing short cycling and system overload. It ensures reliable HVAC system performance and extends compressor life.",
+      img: "/Relay-HN65CT003.png",
+    },
+    {
+      name: "Carrier / UTC - HN67ZA006 - Time Delay Relay",
+      desc: "The Carrier / UTC HN67ZA006 Time Delay Relay is designed to provide precise timing control for HVAC systems, preventing short cycling and ensuring reliable compressor operation. It enhances system efficiency and protects components from premature wear.",
+      img: "/HN67ZA006.jpeg",
+    },
+     {
+      name: "Carrier angle valve part# XL12AL002",
+      desc: "The XL12AL002 is a compact angle-type refrigerant service/shut-off valve designed for controlling and isolating flow in HVAC systems. It provides a reliable sealing connection in a right-angle configuration for piping runs and servicing.",
+      img: "/anglevalve.jpg",
+    },
+    {
+      name: "Carrier Filter Drier Oil Part# KH42ME060",
+      desc: "The KH42ME060 Filter Drier efficiently removes moisture and contaminants from HVAC and refrigeration systems. It ensures reliable performance and extends compressor life.",
+      img: "/KH42ME060.jpg",
+    },
+    {
+      name: "Carrier Actuator Motor Part# HF26BB029 XU-347-0-0-1 ",
+      desc: "The Carrier HF26BB029 is a 115 V single-phase actuator motor used in HVAC systems to control dampers or flow direction. It’s a factory-authorized part (Carrier “SRD” series) designed for reliable modulation of air or fluid flow in heating/cooling systems.",
+      img: "/HF26BB029.jpg",
+    },
+     {
+      name: "Carrier DISPLAY BOARD 20V47XYZ-A43",
+      desc: "The 20V47XYZ-A43 is a Carrier display / HMI board (4.3″ “Smart View” display) used in Carrier/CIAT chillers/units",
+      img: "/20V47XYZ-A43.jpg",
     },
   ];
 
   // Filter products based on search query
-  const filteredProducts = products.filter((product) =>
-    product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    product.desc.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredProducts = products.filter(
+    (product) =>
+      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.desc.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
@@ -147,7 +193,6 @@ export default function SparePartsPage() {
           {companies.map((company) => (
             <a
               key={company.name}
-              href={company.link}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-300 shadow-md p-4 rounded-xl hover:shadow-xl hover:-translate-y-1 transition transform text-xl font-serif w-full text-center"
@@ -166,11 +211,11 @@ export default function SparePartsPage() {
       {/* Services Section */}
       <section className="bg-gray-100 py-12 px-6 md:px-20">
         <div className="flex items-center justify-center gap-3 mb-8">
-        <Wrench className="w-8 h-8 text-teal-700" />
-        <h2 className="text-3xl text-teal-800 font-bold font-serif">
-          Our Services
-        </h2>
-      </div>
+          <Wrench className="w-8 h-8 text-teal-700" />
+          <h2 className="text-3xl text-teal-800 font-bold font-serif">
+            Our Services
+          </h2>
+        </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service) => (
             <div
@@ -197,7 +242,7 @@ export default function SparePartsPage() {
         <h2 className="text-3xl text-teal-800 font-bold font-serif text-center mb-8">
           Product Details
         </h2>
-        
+
         {/* Search Bar */}
         <div className="max-w-2xl mx-auto mb-8">
           <div className="relative">
@@ -234,7 +279,9 @@ export default function SparePartsPage() {
           </div>
         ) : (
           <div className="text-center py-12">
-            <p className="text-xl text-gray-500">No products found matching your search.</p>
+            <p className="text-xl text-gray-500">
+              No products found matching your search.
+            </p>
           </div>
         )}
       </section>
