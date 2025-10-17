@@ -1,9 +1,10 @@
 "use client";
 import { Wrench, Search } from "lucide-react";
 import { useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+
 export default function SparePartsPage() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
 
   const companies = [
     {
@@ -26,7 +27,7 @@ export default function SparePartsPage() {
       name: "HoneyWell",
       img: "/Honeywelllogo.png",
     },
-     {
+    {
       name: "Carlyle",
       img: "/carlylelogo.png",
     },
@@ -34,15 +35,15 @@ export default function SparePartsPage() {
       name: "Trane",
       img: "/tranelogo.png",
     },
-     {
+    {
       name: "Johnson Controls",
       img: "/johnsonlogo.jpg",
     },
-     {
+    {
       name: "Daikin",
       img: "/Daikinlogo.png",
     },
-     {
+    {
       name: "Totaline",
       img: "/Totalinelogo.png",
     },
@@ -69,113 +70,127 @@ export default function SparePartsPage() {
 
   const products = [
     {
-      name: "Transducer 00PPG000012000A",
+      name: "Carrier Transducer 00PPG000012000A",
       desc: "A precision device that converts physical signals such as pressure, temperature, or force into electrical signals for monitoring or control applications.",
-      img: "/transducer12000.png",
+      images: ["/transducer12000.png", "/transducer12000.png"],
     },
     {
       name: "York Referigeration Compressor Oil",
       desc: "A high-quality mineral-based lubricant specially formulated for York refrigeration and air conditioning compressors. It provides excellent lubrication, moisture control, and chemical stability, ensuring reliable compressor performance and extended service life. Suitable for systems using refrigerants like R-22 and R-134a.",
-      img: "/compressoroil.jpg",
+      images: ["/compressoroil.jpg", "/compressoroil.jpg"],
     },
     {
-      name: "Ester Oil SW220 (5 Liter Can)",
+      name: "Totaline Ester Oil SW220 (5 Liter Can)",
       desc: "High-performance synthetic compressor oil designed for excellent lubrication, thermal stability, and long service life in HVAC and industrial systems.",
-      img: "/esteroilsw220.png",
+      images: ["/esteroilsw220.png", "/esteroilsw220.png"],
     },
     {
       name: "Suniso Oil Sl-68",
       desc: "Fully synthetic (POE) refrigeration compressor oil designed for HFC / chlorine-free refrigerants, offering excellent miscibility, viscosity stability, thermal stability, and wear protection in refrigeration and AC systems.",
-      img: "/sunisooilsl68.jpg",
+      images: ["/sunisooilsl68.jpg", "/sunisooilsl68.jpg"],
     },
     {
       name: "Honeywell WS9B2WB/U",
       desc: "The WS9B2WB/U is a wall-mounted temperature control / thermostat module intended for use with fan coil units (2-pipe systems).",
-      img: "/honeywellws.jpg",
+      images: ["/honeywellws.jpg", "/honeywellws.jpg"],
     },
     {
-      name: "Carrier POE68 Centrifugal Oil",
+      name: "Carrier POE68 Centrifugal Oil (3.785 LITRES)",
       desc: "High-performance POE68 centrifugal oil designed for superior lubrication and cooling in HVAC and refrigeration compressors.",
-      img: "/poe68.png",
+      images: ["/poe68.png", "/poe68.png"],
     },
     {
       name: "Honeywell FCU Valve V4043C1362B",
       desc: "A two-way, 2-position motorized valve designed for fan coil unit (FCU) applications, featuring a spring-return mechanism to close the valve upon loss of power.",
-      img: "/FCUvalve.jpg",
+      images: ["/FCUvalve.jpg", "/FCUvalve.jpg"],
     },
     {
       name: "Carrier Internal Oil Filter Kit 06NA660028",
       desc: "A genuine OEM internal oil filter kit designed for Carrier 30HXC / 30GX 06N screw chillers",
-      img: "/oilfilter06na.jpg",
+      images: ["/oilfilter06na.jpg", "/oilfilter06na.jpg"],
     },
     {
       name: "Toshiba Remote Controller 43166011 (RBC-AMT32E, Wired)",
       desc: "A wired remote controller used with Toshiba VRF / light commercial air-conditioning systems",
-      img: "/toshibaremotecontrol.jpg",
+      images: ["/toshibaremotecontrol.jpg", "/toshibaremotecontrol.jpg"],
     },
     {
       name: "06NA660011 - Carrier HVAC - Unloader Solenoid Valve",
       desc: "OEM unloader solenoid valve for Carrier 06NA screw compressors, controlling compressor capacity and enhancing efficiency.",
-      img: "/solenoidvalve06na.jpg",
+      images: ["/solenoidvalve06na.jpg", "/solenoidvalve06na.jpg"],
     },
     {
       name: "CARRIER, Mfr Part # HN53CC024, Contactor - 115Z68|HN53CC024 - Grainger",
       desc: "A Carrier HN53CC024 is a 3-pole HVAC contactor with a 24 VAC coil rated for about 30 A full-load, used for switching and controlling high-current loads in air conditioning / refrigeration systems",
-      img: "/contactorcc024.jpeg",
+      images: ["/contactorcc024.jpeg", "/contactorcc024.jpeg"],
     },
     {
       name: "Hisense HYE-VD01 Wireless Remote Controller",
       desc: "A slim, backlit LCD wireless controller for Hisense VRF systems, offering individual louver control, 24-hour timer, auto test run, self-diagnostic functions, and multiple operating modes (cool/heat/auto/fan/dry).",
-      img: "/hye-vd01.jpg",
+      images: ["/hye-vd01.jpg", "/hye-vd01.jpg"],
     },
     {
       name: "ALS-3 Oil strainer KH11NG120",
-      desc: "Element 26 026-11225-000 is a high-quality oil filter element (20-micron) designed for commercial chiller units. It ensures efficient filtration and smooth oil circulation during oil changes, protecting the compressor from contaminants..",
-      img: "/ALS-3-KH11NG120.jpg",
+      desc: "Element 26 026-11225-000 is a high-quality oil filter element (20-micron) designed for commercial chiller units. It ensures efficient filtration and smooth oil circulation during oil changes, protecting the compressor from contaminants.",
+      images: ["/ALS-3-KH11NG120.jpg", "/ALS-3-KH11NG120.jpg"],
     },
-     {
+    {
       name: "Compressor Lockout Relay Board Part# HN-65CT-003",
       desc: "The Compressor Lockout Relay Board Part# HN-65CT-003 controls and protects compressor operation by preventing short cycling and system overload. It ensures reliable HVAC system performance and extends compressor life.",
-      img: "/Relay-HN65CT003.png",
+      images: ["/Relay-HN65CT003.png", "/Relay-HN65CT003.png"],
     },
     {
       name: "Carrier / UTC - HN67ZA006 - Time Delay Relay",
       desc: "The Carrier / UTC HN67ZA006 Time Delay Relay is designed to provide precise timing control for HVAC systems, preventing short cycling and ensuring reliable compressor operation. It enhances system efficiency and protects components from premature wear.",
-      img: "/HN67ZA006.jpeg",
+      images: ["/HN67ZA006.jpeg", "/HN67ZA006.jpeg"],
     },
-     {
+    {
       name: "Carrier angle valve part# XL12AL002",
       desc: "The XL12AL002 is a compact angle-type refrigerant service/shut-off valve designed for controlling and isolating flow in HVAC systems. It provides a reliable sealing connection in a right-angle configuration for piping runs and servicing.",
-      img: "/anglevalve.jpg",
+      images: ["/anglevalve.jpg", "/anglevalve.jpg"],
     },
     {
       name: "Carrier Filter Drier Oil Part# KH42ME060",
       desc: "The KH42ME060 Filter Drier efficiently removes moisture and contaminants from HVAC and refrigeration systems. It ensures reliable performance and extends compressor life.",
-      img: "/KH42ME060.jpg",
+      images: ["/KH42ME060.jpg", "/KH42ME060.jpg"],
     },
     {
-      name: "Carrier Actuator Motor Part# HF26BB029 XU-347-0-0-1 ",
-      desc: "The Carrier HF26BB029 is a 115 V single-phase actuator motor used in HVAC systems to control dampers or flow direction. It’s a factory-authorized part (Carrier “SRD” series) designed for reliable modulation of air or fluid flow in heating/cooling systems.",
-      img: "/HF26BB029.jpg",
+      name: "Carrier Actuator Motor Part# HF26BB029 XU-347-0-0-1",
+      desc: "The Carrier HF26BB029 is a 115 V single-phase actuator motor used in HVAC systems to control dampers or flow direction. It is a factory-authorized part designed for reliable modulation of air or fluid flow in heating/cooling systems.",
+      images: ["/HF26BB029.jpg", "/HF26BB029.jpg"],
     },
-     {
+    {
       name: "Carrier DISPLAY BOARD 20V47XYZ-A43",
-      desc: "The 20V47XYZ-A43 is a Carrier display / HMI board (4.3″ “Smart View” display) used in Carrier/CIAT chillers/units",
-      img: "/20V47XYZ-A43.jpg",
+      desc: "The 20V47XYZ-A43 is a Carrier display / HMI board used in Carrier/CIAT chillers/units",
+      images: ["/20V47XYZ-A43.jpg", "/20V47XYZ-A43.jpg"],
+    },
+    {
+      name: "Carrier Filter Drier Part# KH45LE120",
+      desc: "It is designed to remove moisture and contaminants from refrigeration and air conditioning systems. It ensures efficient performance and protects the compressor from damage.",
+      images: ["/KH45LE120.jpg", "/KH45LE120.jpg"],
+    },
+    {
+      name: "Carrier spm board 32GB500362EE",
+      desc: "It is a system protection module used in HVAC units to control and monitor critical functions. It ensures reliable system performance and safeguards components from electrical faults.",
+      images: ["/32G500362.jpg", "/32GB500362-2.png"],
+    },
+    {
+      name: "Carrier spm board 32GB500362EE",
+      desc: "It is a system protection module used in HVAC units to control and monitor critical functions. It ensures reliable system performance and safeguards components from electrical faults.",
+      images: ["/32GB500382-1.jpg", "/32GB500382-2.jpg"],
     },
   ];
 
-  // Filter products based on search query
-  const filteredProducts = products.filter(
+  const filteredProducts = products.filter( 
     (product) =>
       product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       product.desc.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800 ">
+    <div className="min-h-screen bg-gray-50 text-gray-800">
       <main className="pt-42"></main>
-      {/* Header Section */}
+      
       <section className="text-center py-16 bg-red-600 text-white">
         <h1 className="text-4xl font-bold mb-3">Spare Parts & Services</h1>
         <p className="text-lg max-w-2xl mx-auto px-3 py-3">
@@ -184,7 +199,6 @@ export default function SparePartsPage() {
         </p>
       </section>
 
-      {/* Companies Section */}
       <section className="py-12 px-6 md:px-20">
         <h2 className="text-3xl text-teal-800 font-bold font-serif text-center mb-8">
           We Deal In
@@ -208,7 +222,6 @@ export default function SparePartsPage() {
         </div>
       </section>
 
-      {/* Services Section */}
       <section className="bg-gray-100 py-12 px-6 md:px-20">
         <div className="flex items-center justify-center gap-3 mb-8">
           <Wrench className="w-8 h-8 text-teal-700" />
@@ -237,13 +250,11 @@ export default function SparePartsPage() {
         </div>
       </section>
 
-      {/* Product Details Section with Search */}
       <section className="py-12 px-6 md:px-20">
         <h2 className="text-3xl text-teal-800 font-bold font-serif text-center mb-8">
           Product Details
         </h2>
 
-        {/* Search Bar */}
         <div className="max-w-2xl mx-auto mb-8">
           <div className="relative">
             <input
@@ -257,19 +268,22 @@ export default function SparePartsPage() {
           </div>
         </div>
 
-        {/* Products Grid */}
         {filteredProducts.length > 0 ? (
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {filteredProducts.map((product, index) => (
               <div
                 key={`${product.name}-${index}`}
                 className="bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition transform"
+                onMouseEnter={() => setHoveredProduct(index)}
+                onMouseLeave={() => setHoveredProduct(null)}
               >
-                <img
-                  src={product.img}
-                  alt={product.name}
-                  className="w-full h-76 object-cover"
-                />
+                <div className="relative w-full h-76 overflow-hidden">
+                  <img
+                    src={hoveredProduct === index ? product.images[1] : product.images[0]}
+                    alt={product.name}
+                    className="w-full h-full object-cover transition-opacity duration-300"
+                  />
+                </div>
                 <div className="p-5">
                   <h3 className="font-semibold text-xl mb-2">{product.name}</h3>
                   <p className="text-gray-600 text-sm mb-3">{product.desc}</p>

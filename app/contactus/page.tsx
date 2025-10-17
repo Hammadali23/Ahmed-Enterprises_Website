@@ -29,7 +29,7 @@ export default function ContactPage() {
 
   // 🔹 Replace with your own numbers
   const telephoneNumber = "021-34321552-53";
-  const whatsappNumber = "923212280099"; 
+  const whatsappNumber = "923212280099";
   const whatsappMessage = encodeURIComponent(
     "Hi Ahmed Enterprises, I’m interested in your products and services. Please assist me."
   );
@@ -115,25 +115,22 @@ export default function ContactPage() {
                     </a>
                   </p>
                 </div>
-
                 {/* WhatsApp */}
                 <div className="flex items-center gap-3 mb-2">
                   <span className="text-green-600">
                     <FaWhatsapp size={20} />
                   </span>
                   <p>
-                    <strong>WhatsApp:</strong>{" "}
                     <a
                       href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-green-600 hover:underline"
+                      className="text-green-600 font-semibold hover:underline"
                     >
-                      +{whatsappNumber}
+                      Chat on WhatsApp
                     </a>
                   </p>
                 </div>
-
                 {/* Fax */}
                 <div className="flex items-center gap-3">
                   <Printer className="w-5 h-5 text-gray-500" />
