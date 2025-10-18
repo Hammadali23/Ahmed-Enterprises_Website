@@ -1,10 +1,12 @@
 "use client";
-import { Wrench, Search } from "lucide-react";
+import { Wrench, Search, Factory, ShieldCheck, Zap } from "lucide-react";
 import { useState } from "react";
 
 export default function SparePartsPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
+
+  // --- DATA ARRAYS ---
 
   const companies = [
     {
@@ -181,120 +183,170 @@ export default function SparePartsPage() {
     },
   ];
 
-  const filteredProducts = products.filter( 
+  const filteredProducts = products.filter(
     (product) =>
       product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       product.desc.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  // --- COMPONENT RENDER ---
+
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800">
-      <main className="pt-42"></main>
-      
-      <section className="text-center py-16 bg-red-600 text-white">
-        <h1 className="text-4xl font-bold mb-3">Spare Parts & Services</h1>
-        <p className="text-lg max-w-2xl mx-auto px-3 py-3">
-          We provide original spare parts for all leading HVAC brands along with
-          professional installation and maintenance services.
+    <div className="min-h-screen bg-white text-black">
+      {/* Spacer for fixed header/navbar */}
+      <main className="pt-24 sm:pt-32"></main> 
+
+      {/* Hero Section: Red Background, White Text */}
+      <section className="text-center py-12 md:py-16 bg-red-600 text-white shadow-xl px-4">
+        <h1 className="text-3xl sm:text-4xl font-extrabold mb-3 uppercase tracking-wider">
+          HVAC Parts & Professional Solutions
+        </h1>
+        <p className="text-base sm:text-xl max-w-4xl mx-auto font-medium">
+          We provide **Original Equipment Manufacturer (OEM)** and **High-Efficiency** parts, along with expert **Installation** and **Maintenance** services to ensure your system's integrity.
         </p>
       </section>
 
-      <section className="py-12 px-6 md:px-20">
-        <h2 className="text-3xl text-teal-800 font-bold font-serif text-center mb-8">
-          We Deal In
+      {/* Key Value Proposition */}
+      <section className="py-8 px-6 md:px-20 bg-black text-white">
+        <div className="flex flex-col sm:flex-row justify-around items-center gap-4 sm:gap-6">
+            <div className="text-center w-full sm:w-auto p-2">
+                <ShieldCheck className="w-6 h-6 sm:w-8 sm:h-8 text-red-600 mx-auto mb-1 sm:mb-2"/>
+                <p className="font-semibold text-xs sm:text-sm uppercase">100% OEM Guarantee</p>
+            </div>
+            <div className="text-center w-full sm:w-auto p-2">
+                <Factory className="w-6 h-6 sm:w-8 sm:h-8 text-red-600 mx-auto mb-1 sm:mb-2"/>
+                <p className="font-semibold text-xs sm:text-sm uppercase">Direct Manufacturer Sourcing</p>
+            </div>
+            <div className="text-center w-full sm:w-auto p-2">
+                <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-red-600 mx-auto mb-1 sm:mb-2"/>
+                <p className="font-semibold text-xs sm:text-sm uppercase">Optimized System Efficiency</p>
+            </div>
+        </div>
+      </section>
+
+      {/* We Deal In: Brands Section */}
+      <section className="py-12 md:py-16 px-6 md:px-20 bg-gray-50">
+        <h2 className="text-2xl sm:text-3xl text-black font-extrabold text-center mb-8 md:mb-10 border-b-4 border-red-700 inline-block px-4 pb-1 uppercase tracking-tight">
+          Reliable HVAC Brands for Uninterrupted Comfort
         </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 place-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 gap-4 sm:gap-6 md:gap-8 place-items-center">
           {companies.map((company) => (
             <a
               key={company.name}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gray-300 shadow-md p-4 rounded-xl hover:shadow-xl hover:-translate-y-1 transition transform text-xl font-serif w-full text-center"
+              className="bg-white shadow-lg p-3 sm:p-5 rounded-xl border-2 border-gray-100 hover:shadow-2xl hover:border-red-600 transition duration-300 transform hover:scale-105 w-full text-center"
             >
-              <img
-                src={company.img}
-                alt={company.name}
-                className="mx-auto mb-3 w-full h-28 object-contain"
-              />
-              <p className="text-center font-medium">{company.name}</p>
+              <div className="mx-auto mb-2 sm:mb-3 w-full h-12 sm:h-16 flex items-center justify-center">
+                <img
+                  src={company.img}
+                  alt={company.name}
+                  className="max-w-full max-h-full object-contain transition duration-500" 
+                />
+              </div>
+              <p className="text-center font-bold text-xs sm:text-sm text-black mt-1 sm:mt-2">
+                {company.name}
+              </p>
             </a>
           ))}
         </div>
       </section>
 
-      <section className="bg-gray-100 py-12 px-6 md:px-20">
-        <div className="flex items-center justify-center gap-3 mb-8">
-          <Wrench className="w-8 h-8 text-teal-700" />
-          <h2 className="text-3xl text-teal-800 font-bold font-serif">
-            Our Services
+      {/* Our Services Section */}
+      <section className="bg-black py-12 md:py-16 px-6 md:px-20">
+        <div className="flex items-center justify-center gap-2 sm:gap-3 mb-8 md:mb-10">
+          <Wrench className="w-7 h-7 sm:w-8 sm:h-8 text-red-600" />
+          <h2 className="text-2xl sm:text-3xl text-white font-extrabold border-b-4 border-red-600 px-3 sm:px-4 pb-1 uppercase tracking-tight">
+            Comprehensive HVAC Service Portfolio
           </h2>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {services.map((service) => (
             <div
               key={service.name}
-              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition transform font-serif"
+              className="bg-white rounded-xl shadow-xl overflow-hidden border-t-4 border-red-600 hover:shadow-2xl hover:border-red-800 transition transform duration-300"
             >
               <img
                 src={service.img}
                 alt={service.name}
-                className="w-full h-72 object-cover"
+                className="w-full h-48 sm:h-56 object-cover"
               />
-              <div className="p-5 text-center">
-                <h3 className="font-semibold text-lg text-gray-800">
+              <div className="p-4 sm:p-5 text-center bg-gray-50">
+                <h3 className="font-extrabold text-base sm:text-lg text-black uppercase">
                   {service.name}
                 </h3>
+                <p className="text-xs text-gray-500 mt-1">Ensure System Longevity</p> 
+                <div className="h-0.5 w-10 sm:w-12 bg-red-600 mx-auto mt-2"></div>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="py-12 px-6 md:px-20">
-        <h2 className="text-3xl text-teal-800 font-bold font-serif text-center mb-8">
-          Product Details
+      {/* Product Details Section - Image display fix implemented here */}
+      <section className="py-12 md:py-16 px-6 md:px-20 bg-white">
+        <h2 className="text-2xl sm:text-3xl text-black font-extrabold text-center mb-8 md:mb-10 border-b-4 border-red-600 inline-block px-4 pb-1 uppercase tracking-tight">
+          Precision Parts for Peak Performance
         </h2>
 
-        <div className="max-w-2xl mx-auto mb-8">
+        {/* Search Bar */}
+        <div className="max-w-3xl mx-auto mb-10 md:mb-12">
           <div className="relative">
             <input
               type="text"
-              placeholder="Search products by name or description..."
+              placeholder="Search by Part Number, Brand, or Application..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-5 py-3 pl-12 rounded-lg border-2 border-gray-300 focus:border-teal-600 focus:outline-none shadow-md"
+              className="w-full px-5 py-3 sm:py-4 pl-12 sm:pl-14 rounded-full border-2 border-black focus:border-red-600 focus:ring-2 focus:ring-red-300 focus:outline-none shadow-lg text-black placeholder-gray-500 transition duration-300 text-sm sm:text-base"
             />
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+            <Search className="absolute left-4 sm:left-5 top-1/2 transform -translate-y-1/2 text-red-600 w-4 h-4 sm:w-5 sm:h-5" />
           </div>
         </div>
 
+        {/* Products Grid */}
         {filteredProducts.length > 0 ? (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {filteredProducts.map((product, index) => (
               <div
                 key={`${product.name}-${index}`}
-                className="bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition transform"
+                className="bg-white shadow-xl rounded-xl overflow-hidden border border-gray-200 hover:shadow-red-300/60 hover:shadow-2xl hover:border-red-600 transition transform duration-300 cursor-pointer"
                 onMouseEnter={() => setHoveredProduct(index)}
                 onMouseLeave={() => setHoveredProduct(null)}
               >
-                <div className="relative w-full h-76 overflow-hidden">
+                {/* *** PRODUCT IMAGE CONTAINER ***
+                  - h-64: Increased height to give the image more vertical space.
+                  - object-cover: Ensures the image fills this increased height.
+                */}
+                <div className="relative w-full h-64 overflow-hidden bg-gray-100">
+                  {/* Badge */}
+                  <span className="absolute top-2 left-2 bg-red-700 text-white text-xs font-bold px-3 py-1 rounded-full z-10 shadow-md">
+                    OEM Quality
+                  </span>
                   <img
                     src={hoveredProduct === index ? product.images[1] : product.images[0]}
                     alt={product.name}
-                    className="w-full h-full object-cover transition-opacity duration-300"
+                    className="w-full h-full object-cover transition-all duration-500 transform hover:scale-110"
                   />
                 </div>
-                <div className="p-5">
-                  <h3 className="font-semibold text-xl mb-2">{product.name}</h3>
-                  <p className="text-gray-600 text-sm mb-3">{product.desc}</p>
+                <div className="p-4 sm:p-5">
+                  <h3 className="font-extrabold text-base sm:text-lg mb-1 text-black leading-snug">
+                    {product.name}
+                  </h3>
+                  {/* Subtle divider */}
+                  <div className="h-0.5 w-full bg-gray-200 my-2"></div>
+                  {/* Description */}
+                  <p className="text-gray-700 text-sm h-16 sm:h-20 overflow-hidden line-clamp-4">
+                    {product.desc}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
         ) : (
-          <div className="text-center py-12">
-            <p className="text-xl text-gray-500">
-              No products found matching your search.
+          <div className="text-center py-10 md:py-12 border-4 border-black border-dashed rounded-xl bg-gray-50 px-4">
+            <p className="text-lg sm:text-xl text-gray-500 font-semibold">
+              <Search className="w-5 h-5 sm:w-6 sm:h-6 inline-block mr-2 text-red-600"/>
+              We couldn't find products matching "{searchQuery}". Try a different search term.
             </p>
           </div>
         )}
