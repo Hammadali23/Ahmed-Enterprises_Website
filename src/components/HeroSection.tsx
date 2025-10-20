@@ -120,14 +120,14 @@ export default function HomePage() {
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 md:mb-6 leading-tight">
-            AHMED ENTERPRISES
+            AHMAD ENTERPRISES
           </h1>
           <div className="w-20 md:w-24 h-0.5 bg-white/60 mx-auto mb-4 md:mb-6"></div>
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl max-w-4xl mx-auto mb-3 md:mb-4 leading-relaxed font-light">
-            Engineering Climate Control Excellence Since 2003
+            Engineering Climate Control Excellence
           </p>
           <p className="text-sm md:text-base lg:text-lg max-w-3xl mx-auto mb-8 md:mb-10 leading-relaxed text-gray-200">
-            Delivering comprehensive HVAC & Refrigeration solutions with unmatched expertise, 
+            Delivering comprehensive HVAC & R solutions with unmatched expertise, 
             precision engineering, and nationwide service coverage across Pakistan
           </p>
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
@@ -173,10 +173,7 @@ export default function HomePage() {
       <section className="py-16 md:py-24 px-4 md:px-6 lg:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
-            <span className="text-neutral-600 font-medium text-xs md:text-sm uppercase tracking-widest">About Us</span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-3">
-              Industry Leaders in HVAC Solutions
-            </h2>
+            <span className="text-neutral-600 font-medium text-xl md:text-xl uppercase tracking-widest">About Us</span>
             <div className="w-16 md:w-20 h-0.5 bg-neutral-900 mx-auto"></div>
           </div>
           
@@ -252,15 +249,15 @@ export default function HomePage() {
           <div className="text-center mb-12 md:mb-16">
             <span className="text-neutral-600 font-medium text-xs md:text-sm uppercase tracking-widest">Our Advantages</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mt-4 mb-3">
-              Why Choose Ahmed Enterprises?
+              Why Choose Ahmad Enterprises?
             </h2>
             <div className="w-16 md:w-20 h-0.5 bg-neutral-900 mx-auto mb-6"></div>
             <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
-              We deliver comprehensive HVAC solutions backed by experience, expertise, and unwavering commitment to excellence
+              We deliver comprehensive HVAC & R solutions backed by experience, expertise, and unwavering commitment to excellence
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-4">
             <div className="bg-white p-8 md:p-10 rounded-xl hover:shadow-2xl transition-all duration-300 border border-gray-200 group">
               <div className="w-14 h-14 md:w-16 md:h-16 bg-neutral-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
                 <svg className="w-7 h-7 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -281,10 +278,9 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl md:text-2xl font-bold text-neutral-900 mb-3">Certified Expert Team</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-neutral-900 mb-3">Expert Team</h3>
               <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                Our highly qualified engineers and technicians hold international certifications 
-                and undergo continuous training. We bring decades of combined experience to every 
+                We bring decades of combined experience to every 
                 project, ensuring superior workmanship and optimal system performance.
               </p>
             </div>
@@ -314,34 +310,6 @@ export default function HomePage() {
                 We stock and supply only authentic OEM spare parts from authorized distributors. 
                 All installations and repairs come with comprehensive warranty coverage, giving 
                 you complete peace of mind and long-term reliability.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 md:p-10 rounded-xl hover:shadow-2xl transition-all duration-300 border border-gray-200 group">
-              <div className="w-14 h-14 md:w-16 md:h-16 bg-neutral-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
-                <svg className="w-7 h-7 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-xl md:text-2xl font-bold text-neutral-900 mb-3">Energy Efficient Solutions</h3>
-              <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                Our systems are designed for optimal energy efficiency, reducing operational 
-                costs while maintaining peak performance. We help you achieve significant 
-                savings on electricity bills through smart HVAC design and implementation.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 md:p-10 rounded-xl hover:shadow-2xl transition-all duration-300 border border-gray-200 group">
-              <div className="w-14 h-14 md:w-16 md:h-16 bg-neutral-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
-                <svg className="w-7 h-7 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-                </svg>
-              </div>
-              <h3 className="text-xl md:text-2xl font-bold text-neutral-900 mb-3">Preventive Maintenance Plans</h3>
-              <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                Customized maintenance contracts ensure your HVAC systems operate at maximum 
-                efficiency year-round. Regular inspections, cleaning, and tune-ups extend 
-                equipment life and prevent costly breakdowns before they occur.
               </p>
             </div>
           </div>

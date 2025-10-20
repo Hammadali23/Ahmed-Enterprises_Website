@@ -87,55 +87,26 @@ export default function AboutPage() {
       )}
 
       {/* Hero Section */}
-      <div className="relative bg-white text-black overflow-hidden">
+      <div className="relative bg-white text-white overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
             backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.05) 35px, rgba(255,255,255,.05) 70px)',
           }}></div>
         </div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 lg:py-28">
+        <div className="bg-gray-600 relative max mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 lg:py-16 mb-6">
           <div className="text-center">
-            <div className="inline-block mb-4 sm:mb-6">
-              <span className="bg-red-700 text-white px-4 sm:px-6 py-2 text-xs sm:text-sm font-bold uppercase tracking-wider">
-                Pakistan's Leading HVAC Provider
-              </span>
-            </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-2">
-              HVAC&R Service Provider
+              HVAC & R Service Provider
               <br />
               <span className="text-black">Under One Roof</span>
+               <div className="w-64 h-1 bg-red-600 mx-auto mb-4"></div>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-800 max-w-3xl mx-auto leading-relaxed px-4">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white max-w-3xl mx-auto leading-relaxed px-4">
               Ahmed Enterprises - 20+ Years of Excellence in Complete Heating, Ventilation & Air Conditioning Solutions
             </p>
           </div>
         </div>
       </div>
-
-      {/* Stats Section */}
-      <div className="bg-white border-t-4 border-red-600 -mt-12 sm:-mt-16 relative z-10 mx-2 sm:mx-4 md:mx-8 shadow-xl">
-        <div className="max-w-7xl mx-auto px-2 sm:px-4 py-8 sm:py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className="flex justify-center mb-3 sm:mb-4">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-black group-hover:bg-red-600 flex items-center justify-center transform group-hover:scale-110 transition-all duration-300 shadow-lg">
-                    <stat.icon className="w-7 h-7 sm:w-9 sm:h-9 md:w-11 md:h-11 text-white" />
-                  </div>
-                </div>
-                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-1 sm:mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-xs sm:text-sm md:text-base text-gray-600 font-semibold uppercase tracking-wide px-1">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
         {/* HVAC Services Showcase */}
         <div className="mb-16 sm:mb-20 md:mb-24">

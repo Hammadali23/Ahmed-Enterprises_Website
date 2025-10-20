@@ -166,20 +166,50 @@ export default function SparePartsPage() {
       desc: "The 20V47XYZ-A43 is a Carrier display / HMI board used in Carrier/CIAT chillers/units",
       images: ["/20V47XYZ-A43.jpg", "/20V47XYZ-A43.jpg"],
     },
-    {
+      {
       name: "Carrier Filter Drier Part# KH45LE120",
       desc: "It is designed to remove moisture and contaminants from refrigeration and air conditioning systems. It ensures efficient performance and protects the compressor from damage.",
       images: ["/KH45LE120.jpg", "/KH45LE120.jpg"],
     },
     {
-      name: "Carrier spm board 32GB500362EE",
+      name: "Carrier spm board Part# 32GB500362EE",
       desc: "It is a system protection module used in HVAC units to control and monitor critical functions. It ensures reliable system performance and safeguards components from electrical faults.",
       images: ["/32G500362.jpg", "/32GB500362-2.png"],
     },
     {
-      name: "Carrier spm board 32GB500362EE",
-      desc: "It is a system protection module used in HVAC units to control and monitor critical functions. It ensures reliable system performance and safeguards components from electrical faults.",
+      name: "Carrier Main Base board, Part# 32GB500322EE",
+      desc: "It is a high-performance control board designed for reliable operation in HVAC systems. It ensures efficient communication between system components for optimal performance and stability.",
       images: ["/32GB500382-1.jpg", "/32GB500382-2.jpg"],
+    },
+    {
+      name: "Carrier Pressure Switch Part# 00PPG000489000A",
+      desc: "It is a durable and reliable safety component designed to monitor system pressure levels. It helps protect HVAC equipment from overpressure conditions and ensures efficient system performance.",
+      images: ["/PS-488900","/PS-488900"],
+    },
+    {
+      name: "Carrier Electronic Flow Switch, Part# 00PPG000453200A",
+      desc: " It is a precision sensor that detects and monitors fluid flow in HVAC systems. It ensures safe operation by preventing damage caused by low or no-flow conditions.",
+      images: ["/FS-453200","/FS-453200"],
+    },
+    {
+      name: "Carrier Electronic Flow Switch, Part# 00PPG0003100A",
+      desc: "It is a dependable device designed to monitor liquid flow in HVAC systems. It provides protection by shutting down the system during low or no-flow conditions to prevent equipment damage.",
+      images: ["/FS-3100.jpg","/FS-3100.jpg"],
+    },
+    {
+      name: "Carrier Temperature Sensor, Part# HH79NZ031",
+      desc: "It is a precise sensing device designed to monitor temperature in HVAC systems. It ensures accurate temperature readings for optimal system control and energy efficiency.",
+      images: ["/SR-79NZ031-1.jpg","/SR-79NZ031-2.jpg"],
+    },
+    {
+      name: "Carrier Low Pressure Sensor Transducer,Part# OP12DA040EE ",
+      desc: "It is a precise and reliable device designed to monitor low-side system pressure in HVAC applications. It ensures accurate pressure readings for optimal performance, safety, and efficient system control.",
+      images: ["/TR-040.jpg","/TR-040.jpg"],
+    },
+     {
+      name: "Carrier High Pressure Sensor Transducer,Part# OP12DA039EE ",
+      desc: "It is a reliable and accurate device designed for HVAC systems. It monitors high-side refrigerant pressure to ensure safe and efficient operation. Built with durable materials, it offers long-lasting performance and precise pressure control.",
+      images: ["/TR-039","/TR-039"],
     },
   ];
 
@@ -313,11 +343,7 @@ export default function SparePartsPage() {
                 onMouseEnter={() => setHoveredProduct(index)}
                 onMouseLeave={() => setHoveredProduct(null)}
               >
-                {/* *** PRODUCT IMAGE CONTAINER ***
-                  - h-64: Increased height to give the image more vertical space.
-                  - object-cover: Ensures the image fills this increased height.
-                */}
-                <div className="relative w-full h-64 overflow-hidden bg-gray-100">
+                <div className="relative w-FULL h-64 overflow-hidden bg-gray-100">
                   {/* Badge */}
                   <span className="absolute top-2 left-2 bg-red-700 text-white text-xs font-bold px-3 py-1 rounded-full z-10 shadow-md">
                     OEM Quality
@@ -335,7 +361,7 @@ export default function SparePartsPage() {
                   {/* Subtle divider */}
                   <div className="h-0.5 w-full bg-gray-200 my-2"></div>
                   {/* Description */}
-                  <p className="text-gray-700 text-sm h-16 sm:h-20 overflow-hidden line-clamp-4">
+                  <p className="text-gray-700 text-sm h-30 sm:h-30 overflow-hidden line-clamp-8">
                     {product.desc}
                   </p>
                 </div>
