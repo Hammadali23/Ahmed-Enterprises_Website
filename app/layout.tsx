@@ -1,6 +1,8 @@
 import "./styles/globals.css";
 import Navbar from "../src/components/Navbar";
 import Footer from "../src/components/Footer";
+import SplashScreen from "../src/components/SplashScreen";
+import SplashProvider from "../src/components/SplashProvider";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,9 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        {children}
-        <Footer />
+        <SplashProvider>
+          <SplashScreen />
+          <Navbar />
+          {children}
+          <Footer />
+        </SplashProvider>
       </body>
     </html>
   );
