@@ -42,7 +42,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white mt-28 font-[Poppins]">
       {/* Hero Section */}
-      <div className="bg-red-700 text-white py-16 px-4 shadow-lg">
+      <div className="bg-gray-700 text-white py-16 px-4 shadow-lg">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-3 tracking-tight">
             Let's Work Together
@@ -174,25 +174,25 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Info */}
-            <div className="bg-red-600 rounded-2xl shadow-lg p-8 text-white">
+            <div className="bg-gray-700 rounded-2xl shadow-lg p-8 text-white">
               <h3 className="text-xl font-bold mb-6">Contact Information</h3>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-black" />
+                  <Phone className="w-5 h-5 text-red-700" />
                   <div>
                     <p className="text-md font-semibold text-white">Phone</p>
                     <p>{telephoneNumber}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Printer className="w-5 h-5 text-black" />
+                  <Printer className="w-5 h-5 text-red-700" />
                   <div>
                     <p className="text-md font-semibold text-white">Fax</p>
                     <p>021-34321552</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-black" />
+                  <Mail className="w-5 h-5 text-red-700" />
                   <div>
                     <p className="text-md font-semibold text-white">Email</p>
                     <p>info@ahmad-ent.com</p>

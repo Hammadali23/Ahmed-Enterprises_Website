@@ -87,7 +87,7 @@ export default function AboutPage() {
       )}
 
       {/* Hero Section */}
-      <div className="relative bg-red-600 text-white overflow-hidden">
+      <div className="relative bg-white text-black overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
             backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.05) 35px, rgba(255,255,255,.05) 70px)',
@@ -106,7 +106,7 @@ export default function AboutPage() {
               <br />
               <span className="text-black">Under One Roof</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-100 max-w-3xl mx-auto leading-relaxed px-4">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-800 max-w-3xl mx-auto leading-relaxed px-4">
               Ahmed Enterprises - 20+ Years of Excellence in Complete Heating, Ventilation & Air Conditioning Solutions
             </p>
           </div>
@@ -192,7 +192,7 @@ export default function AboutPage() {
           </div>
 
           <div className="relative">
-            <div className="bg-red-600 p-6 sm:p-8 md:p-10 lg:p-12 text-white h-full shadow-xl">
+            <div className="bg-gray-500 p-6 sm:p-8 md:p-10 lg:p-12 text-white h-full shadow-xl">
               <div className="space-y-6 sm:space-y-8">
                 <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white flex items-center justify-center">
                   <Target className="w-8 h-8 sm:w-10 sm:h-10 text-red-600" />
@@ -259,7 +259,7 @@ export default function AboutPage() {
         </div>
 
         {/* Capabilities Section */}
-        <div className="bg-black p-6 sm:p-10 md:p-12 lg:p-16 text-white mb-16 sm:mb-20 md:mb-24 shadow-xl">
+        <div className="bg-gray-700 p-6 sm:p-10 md:p-12 lg:p-16 text-white mb-16 sm:mb-20 md:mb-24 shadow-xl">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
             <div>
               <div className="w-16 h-1 bg-red-600 mb-4 sm:mb-6"></div>
@@ -284,57 +284,9 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
-        </div>
-
-        {/* Locations */}
-        <div className="mb-16 sm:mb-20 md:mb-24">
-          <div className="text-center mb-10 sm:mb-12 md:mb-16">
-            <div className="w-16 h-1 bg-red-600 mx-auto mb-4"></div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-3 sm:mb-4 px-2">
-              Our <span className="text-red-600">Locations</span>
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-              Strategically positioned in Pakistan's major cities to serve you better
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
-            <div className="relative group overflow-hidden shadow-xl border-4 border-gray-200 hover:border-red-600 transition-all">
-              <div className="bg-red-600 p-8 sm:p-10 md:p-12 text-white">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-white flex items-center justify-center mb-6 sm:mb-8 group-hover:scale-110 transition-transform">
-                  <Building2 className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-red-600" />
-                </div>
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">Karachi Office</h3>
-                <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-4">
-                  Corporate office and workshop serving Sindh region with complete HVAC solutions and support services.
-                </p>
-                <div className="border-t-2 border-white pt-4 mt-4">
-                  <p className="font-semibold">Office # 104, 1st Floor, Al-Rehman Center</p>
-                  <p>KCHS Block 7&8, Shahrah-e-Faisal, Karachi</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative group overflow-hidden shadow-xl border-4 border-gray-200 hover:border-red-600 transition-all">
-              <div className="bg-black p-8 sm:p-10 md:p-12 text-white">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-white flex items-center justify-center mb-6 sm:mb-8 group-hover:scale-110 transition-transform">
-                  <Building2 className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-black" />
-                </div>
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">Lahore Office</h3>
-                <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-4">
-                  Corporate office and workshop serving Punjab region with dedicated team and comprehensive services.
-                </p>
-                <div className="border-t-2 border-white pt-4 mt-4">
-                  <p className="font-semibold">3-F, Raja Chambers, Queens Road</p>
-                  <p>Mozang Chungi, Lahore</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        </div>  
         {/* CTA Section */}
-        <div className="bg-red-600 p-8 sm:p-10 md:p-12 lg:p-16 text-center text-white shadow-xl border-t-4 border-black">
+        <div className="bg-gray-400 p-8 sm:p-10 md:p-12 lg:p-16 text-center text-white shadow-xl border-t-4 border-black">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             Ready for Professional HVAC Service?
           </h2>

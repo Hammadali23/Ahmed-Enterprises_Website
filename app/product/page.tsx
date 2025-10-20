@@ -197,7 +197,7 @@ export default function SparePartsPage() {
       <main className="pt-24 sm:pt-32"></main> 
 
       {/* Hero Section: Red Background, White Text */}
-      <section className="text-center py-12 md:py-16 bg-red-600 text-white shadow-xl px-4">
+      <section className="text-center py-12 md:py-16 bg-gray-500 text-white shadow-xl px-4">
         <h1 className="text-3xl sm:text-4xl font-extrabold mb-3 uppercase tracking-wider">
           HVAC Parts & Professional Solutions
         </h1>
@@ -207,7 +207,7 @@ export default function SparePartsPage() {
       </section>
 
       {/* Key Value Proposition */}
-      <section className="py-8 px-6 md:px-20 bg-black text-white">
+      <section className="py-8 px-6 md:px-20 bg-gray-800 text-white">
         <div className="flex flex-col sm:flex-row justify-around items-center gap-4 sm:gap-6">
             <div className="text-center w-full sm:w-auto p-2">
                 <ShieldCheck className="w-6 h-6 sm:w-8 sm:h-8 text-red-600 mx-auto mb-1 sm:mb-2"/>
@@ -253,10 +253,10 @@ export default function SparePartsPage() {
       </section>
 
       {/* Our Services Section */}
-      <section className="bg-black py-12 md:py-16 px-6 md:px-20">
+      <section className="bg-gray-300 py-12 md:py-16 px-6 md:px-20">
         <div className="flex items-center justify-center gap-2 sm:gap-3 mb-8 md:mb-10">
           <Wrench className="w-7 h-7 sm:w-8 sm:h-8 text-red-600" />
-          <h2 className="text-2xl sm:text-3xl text-white font-extrabold border-b-4 border-red-600 px-3 sm:px-4 pb-1 uppercase tracking-tight">
+          <h2 className="text-2xl sm:text-3xl text-black font-extrabold border-b-4 border-red-600 px-3 sm:px-4 pb-1 uppercase tracking-tight">
             Comprehensive HVAC Service Portfolio
           </h2>
         </div>
